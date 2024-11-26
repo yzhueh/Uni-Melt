@@ -1,1 +1,56 @@
-Automatic Melting Curve Reader for the Uni-Melt System. The Uni-Melt technique is inherently limited by the potential appearance of nonspecific signals induced by channel crosstalk that will obfuscate the results. Moreover, it is desired to optimize the fluorescence signal threshold parameters to facilitate a clear and distinguishable identification of the output peak profiles. To reduce error-prone manual reading and analysis under multiple samples and tests, it is best to automatically classify the experimental results to facilitate subsequent medical care. Therefore, we developed an automatic signal reader combined with recognition algorithms that could reliably find peaks among possible undesired signals. The flowchart of this automatic reader is shown in Figure 6A. The real HPV genotype peak was precisely selected by the global optimal algorithms. It builds up the solution piece by piece, always choosing the next piece that offers the most immediate benefit (Figure S6). Here, three typical examples were selected as model objects: HPV-16, HPV-31, and contamination (Figure 6B). The global optimal algorithm is a computational method designed to find the best melting curve peak from all feasible peaks. It can also ensure the absolute best peak by examining the entire temperature search space. Then, the greedy algorithm is utilized to find the local optimal peak at every 10 °C. The greedy algorithm can identify the locally optimal peak at each temperature stage. The reader result is shown in Figure 6C, and the two algorithms show only one peak readout for HPV samples. However, as for the contamination test, the global optimal algorithm shows one peak and the greedy algorithm shows several peaks (Figure 6D). Clinical samples are precisely recognized (Figure S7), indicating that the Uni-Melt system can differentiate interference signals through the comparison between these two algorithms.
+# Melting Curve Analysis Tool
+
+A Python-based tool for analyzing DNA melting curves with peak detection and classification capabilities. This tool processes fluorescence data from FAM and HEX channels to identify and classify DNA samples.
+
+## Features
+
+- Processes melting curve data from FAM and HEX fluorescence channels
+- Implements Simulated Annealing algorithm for optimal peak detection
+- Generates visualizations of global and local peak analysis
+- Provides automated classification of DNA samples
+- Saves analysis results and plots to a designated output directory
+
+## Requirements
+
+- Python 3.10
+- Required packages:
+numpy>=1.24.0
+pandas>=2.0.0
+matplotlib>=3.7.0
+scipy>=1.10.0
+openpyxl>=3.1.0
+
+## Installation
+
+Clone the repository:
+```bash
+git clone https://github.com/yourusername/melting-curve-analysis.git
+cd melting-curve-analysis
+Install required packages:
+bash
+
+pip install -r requirements.txt
+Usage
+Prepare your input data in Excel format (.xlsx) with two sheets named 'FAM' and 'HEX'
+Run the analysis:
+bash
+
+python main.py
+The program will:
+
+Process the melting curve data
+Generate visualization plots
+Save results in a 'result' directory
+Create a summary of sample classifications
+Output
+The tool generates:
+
+Individual plot files (.png) for each sample's analysis
+A text file containing classification results
+Console output showing real-time analysis progress
+Project Structure
+main.py: Main execution script
+sa_algorithm.py: Simulated Annealing implementation
+peak_finder.py: Peak detection and processing
+peak_analysis.py: Sample classification logic
+plotting.py: Visualization functions
