@@ -1,0 +1,19 @@
+Summary of All Results:
+Sample 1: Contamination
+Sample 2: HPV-33
+Sample 3: HPV-16
+Sample 4: HPV-18
+Sample 5: HPV-58
+Sample 6: HBB
+Sample 7: HPV-31
+Sample 8: HPV-33
+Sample 9: HPV-16
+Sample 10: HPV-18
+Sample 11: HPV-58
+Sample 12: HBB
+Sample 13: HPV-31
+Sample 14: HPV-33
+Sample 15: HPV-16
+Sample 16: HPV-18
+Sample 17: HPV-58
+Sample 18: HBB
